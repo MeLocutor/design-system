@@ -1,0 +1,26 @@
+{
+  "families": {
+    "display": "Sentient",
+    "body": "Switzer",
+    "metric": "Trench Slab"
+  },
+  "scale": {
+    "display": { "size": "56px", "mobile": "36px", "lineHeight": 1.1, "family": "Sentient", "weight": "Bold", "usage": "Hero home, case cover — 1×/page" },
+    "h1": { "size": "40px", "mobile": "28px", "lineHeight": 1.15, "family": "Sentient", "weight": "Bold", "usage": "Case title, article title" },
+    "h2": { "size": "32px", "mobile": "24px", "lineHeight": 1.2, "family": "Sentient", "weight": "Medium", "usage": "Major sections" },
+    "h3": { "size": "24px", "mobile": "20px", "lineHeight": 1.3, "family": "Sentient", "weight": "Medium", "usage": "Subsections, card title" },
+    "h4": { "size": "20px", "mobile": "18px", "lineHeight": 1.35, "family": "Switzer", "weight": "Medium", "usage": "Block labels, component headers" },
+    "body_lg": { "size": "18px", "mobile": "16px", "lineHeight": 1.6, "family": "Switzer", "weight": "Regular", "usage": "Opening paragraph, lede" },
+    "body": { "size": "16px", "mobile": "15px", "lineHeight": 1.6, "family": "Switzer", "weight": "Regular", "usage": "Default body text" },
+    "caption": { "size": "14px", "mobile": "13px", "lineHeight": 1.4, "family": "Switzer", "weight": "Regular", "usage": "Metadata, legends, sector tags" },
+    "metric_display": { "size": "64px", "mobile": "40px", "lineHeight": 1.05, "family": "Trench Slab", "weight": "SemiBold", "usage": "Proof strip, case anchor number" },
+    "metric_inline": { "size": "28px", "mobile": "22px", "lineHeight": 1.1, "family": "Trench Slab", "weight": "SemiBold", "usage": "Metric inside card/paragraph" }
+  },
+  "forbidden": ["script/hand-lettering fonts", "blackletter", "heavy slab as primary/body typeface", "distressed / worn-effect fonts"],
+  "channelGuidelines": {
+    "web_framer": "Full scale; Sentient + Switzer via self-host or Fontshare CDN (ITF Free)",
+    "linkedin": "No typographic control — hierarchy via short line breaks + strong first sentence",
+    "slides": "Reduce to 3 levels: Title (H1/H2), Body (Body Large), Metric (Trench Slab)",
+    "pdf_documents": "Sentient headers, Switzer body — test B&W print readability"
+  }
+}

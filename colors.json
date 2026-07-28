@@ -1,0 +1,48 @@
+{
+  "tinta": {
+    "hex": "#1F2C3D",
+    "oklch": "oklch(24% 0.045 252)",
+    "pantone": "533 C",
+    "role": "primary",
+    "usage": "wordmark, nav, button background, case headlines, structural icons"
+  },
+  "brasa": {
+    "hex": "#C1502E",
+    "oklch": "oklch(56% 0.15 42)",
+    "pantone": "1665 C",
+    "role": "accent",
+    "usage": "metrics highlight, primary CTA, active link, badges, 1 highlight icon per screen max"
+  },
+  "bronze": {
+    "hex": "#B08D57",
+    "oklch": "oklch(65% 0.08 78)",
+    "pantone": "4515 C",
+    "role": "rare-accent",
+    "usage": "1 proof/achievement element per page max (e.g., gamification badge)"
+  },
+  "neutral": {
+    "50": { "hex": "#FAF8F6", "oklch": "oklch(98% 0.005 50)", "usage": "page background (light)" },
+    "100": { "hex": "#F2EEEA", "oklch": "oklch(95% 0.008 50)", "usage": "secondary context blocks" },
+    "200": { "hex": "#E4DDD6", "oklch": "oklch(89% 0.012 50)", "usage": "borders, dividers" },
+    "300": { "hex": "#CBC0B6", "oklch": "oklch(79% 0.02 50)", "usage": "placeholder, very secondary text" },
+    "400": { "hex": "#A89C90", "oklch": "oklch(66% 0.025 50)", "usage": "tertiary text, neutral icon (dark)" },
+    "500": { "hex": "#8B7F76", "oklch": "oklch(55% 0.02 50)", "usage": "secondary text" },
+    "600": { "hex": "#6B615A", "oklch": "oklch(44% 0.018 50)", "usage": "strong secondary text" },
+    "700": { "hex": "#4F4842", "oklch": "oklch(33% 0.015 50)", "usage": "neutral icon (light)" },
+    "800": { "hex": "#332E2A", "oklch": "oklch(22% 0.012 50)", "usage": "surface (dark)" },
+    "900": { "hex": "#1C1917", "oklch": "oklch(13% 0.008 50)", "usage": "primary text (light)" }
+  },
+  "semantic": {
+    "background": { "light": "#FAF8F6", "dark": "#141C28" },
+    "surface": { "light": "#FFFFFF", "dark": "#1E2A3B" },
+    "text_primary": { "light": "#1C1917", "dark": "#F2EEEA" },
+    "text_secondary": { "light": "#6B615A", "dark": "#CBC0B6" },
+    "border": { "light": "#E4DDD6", "dark": "#33425A" },
+    "primary_button": { "light": "#1F2C3D", "dark": "#D0673F" },
+    "link": { "light": "#2F5C86", "dark": "#5C93C4" },
+    "success": "#2F6B45",
+    "warning": "#8A611F",
+    "error": "#A32E22"
+  },
+  "proportion_rule": "60% neutral / 30% tinta / 10% brasa (bronze exception, not in ratio)"
+}

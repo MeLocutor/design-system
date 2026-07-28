@@ -1,0 +1,26 @@
+{
+  "durations": {
+    "fast": { "value": "120ms", "usage": "Icon hover, simple state toggle" },
+    "base": { "value": "150-200ms", "usage": "Button/color state change, card hover" },
+    "slow": { "value": "300-500ms", "usage": "Section/illustration reveal, staggered 60-80ms per layer" }
+  },
+  "easings": {
+    "standard": { "value": "cubic-bezier(0.16, 1, 0.3, 1)", "name": "ease-out", "usage": "Reveal hierarchy (structure first, accent last)" },
+    "linear": { "value": "linear", "usage": "Opacity-only fades" }
+  },
+  "forbidden": [
+    "bounce",
+    "elastic",
+    "spring",
+    "infinite auto-loop",
+    "decorative path-draw (Lottie-style consumer app animation)"
+  ],
+  "elementLevel": {
+    "icon_button_hover": { "duration": "120-150ms", "easing": "standard", "type": "opacity 0.8→1 or scale 1→1.05", "never": ["rotate", "bounce", "path-draw"] },
+    "button_color_change": { "duration": "150ms", "easing": "standard", "method": "Adjust L in OKLCH (same H/C) — never hue swap" },
+    "illustration_reveal_scroll": { "duration": "300-500ms per layer", "stagger": "60-80ms", "easing": "standard", "order": "Structure (Tinta) first → Accent (Brasa) last" },
+    "section_reveal_scroll": { "duration": "300ms", "easing": "standard", "transform": "fade + translateY(8px)", "never": ["wipe", "dramatic slide", "zoom"] },
+    "page_transition": { "duration": "200ms", "easing": "standard", "type": "Simple fade — no wipe/slide/zoom" }
+  },
+  "principle": "Motion exists to reveal hierarchy — never to entertain. No auto-loop without user interaction."
+}

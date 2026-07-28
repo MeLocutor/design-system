@@ -1,0 +1,28 @@
+{
+  "baseUnit": 8,
+  "scale": [4, 8, 16, 24, 32, 48, 64, 96, 128, 160],
+  "tokens": {
+    "space_1": { "value": "4px", "usage": "Fine adjustment (icon + label)" },
+    "space_2": { "value": "8px", "usage": "Min space between related elements" },
+    "space_3": { "value": "16px", "usage": "Small component internal padding" },
+    "space_4": { "value": "24px", "usage": "Card padding, grid gutter" },
+    "space_5": { "value": "32px", "usage": "Space between blocks within section" },
+    "space_6": { "value": "48px", "usage": "Space between subsections" },
+    "space_7": { "value": "64px", "usage": "Major section spacing (mobile)" },
+    "space_8": { "value": "96px", "usage": "Major section spacing (desktop)" },
+    "space_9": { "value": "128px", "usage": "Hero breath, page opening" },
+    "space_10": { "value": "160px", "usage": "Rare — large editorial block separation" }
+  },
+  "grid": {
+    "desktop": { "columns": 12, "gutter": "24px", "margin": "80px", "minWidth": "1200px" },
+    "tablet": { "columns": 6, "gutter": "16px", "margin": "auto", "minWidth": "768px", "maxWidth": "1199px" },
+    "mobile": { "columns": 4, "gutter": "16px", "margin": "24px", "maxWidth": "767px" }
+  },
+  "compatibilityNote": "Icon grid 24px = layout grid submultiple (24 = 8×3) → icon, spacing, column always align",
+  "densityByContext": {
+    "site_portfolio": { "density": "low", "note": "Min 30% negative space per section" },
+    "linkedin_post_carousel": { "density": "medium-high", "note": "Mobile-first, 1–3 lines/paragraph" },
+    "slides": { "density": "low", "note": "Max 1 idea/slide, generous space around data" },
+    "pdf_document": { "density": "medium", "note": "Standard print margins 2–2.5cm, headers follow type scale" }
+  }
+}

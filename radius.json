@@ -1,0 +1,12 @@
+{
+  "tokens": {
+    "sm": { "value": "2px", "usage": "Icons, small controls" },
+    "md": { "value": "4px", "usage": "Buttons, inputs" },
+    "lg": { "value": "8px", "usage": "Cards, large containers" }
+  },
+  "forbidden": {
+    "pill": { "value": "never", "reason": "Contradicts Sábio structural register — fully rounded buttons signal consumer-friendly/app aesthetic, outside brand territory" }
+  },
+  "illustrationCorners": "Straight or minimal radius (~1–2px) — never generous rounding (pulls toward 'friendly app' register)",
+  "iconCorners": "Predominantly straight / minimal radius (~1px) — butt-cap line terminations, no round caps"
+}
