@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada de Cadastro & FTD — Rodrigo Melo</title>
+  <style>
+    :root {
+      --color-tinta: #1F2C3D;
+      --color-brasa: #C1502E;
+      --color-bronze: #B08D57;
+      --color-neutral-50: #FAF8F6;
+      --color-neutral-100: #F2EEEA;
+      --color-neutral-200: #E4DDD6;
+      --color-neutral-300: #CBC0B6;
+      --color-neutral-500: #8B7F76;
+      --color-neutral-600: #6B615A;
+      --color-neutral-700: #4F4842;
+      --color-neutral-900: #1C1917;
+      --font-display: 'Sentient', Georgia, serif;
+      --font-body: 'Switzer', -apple-system, sans-serif;
+      --font-metric: 'Trench Slab', Georgia, serif;
+      --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px;
+      --space-5: 32px; --space-6: 48px; --space-7: 64px; --space-8: 96px; --space-9: 128px;
+      --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px;
+      --shadow-card: 0 1px 2px rgba(28,25,23,0.06), 0 2px 8px rgba(28,25,23,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--color-neutral-900); background: var(--color-neutral-50); }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 var(--space-5); }
+    @media (min-width: 1200px) { .container { padding: 0 80px; } }
+
+    /* Nav */
+    nav { position: fixed; top: 0; width: 100%; background: var(--color-neutral-50); border-bottom: 1px solid var(--color-neutral-200); z-index: 100; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-links { display: flex; gap: var(--space-6); list-style: none; }
+    .nav-links a { font-family: var(--font-body); color: var(--color-tinta); text-decoration: none; font-weight: 500; }
+    .nav-links a.active { border-bottom: 2px solid var(--color-brasa); padding-bottom: 2px; }
+    .nav-links a:hover { color: var(--color-brasa); }
+
+    /* Case Hero */
+    .case-hero { padding: calc(64px + var(--space-9)) 0 var(--space-8); }
+    .case-meta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4); font-size: 14px; color: var(--color-neutral-600); }
+    .case-meta span { background: var(--color-neutral-100); padding: var(--space-1) var(--space-3); border-radius: var(--radius-sm); }
+    .case-hero h1 { font-family: var(--font-display); font-size: 40px; line-height: 1.15; font-weight: 700; color: var(--color-tinta); margin-bottom: var(--space-3); }
+    .case-hero .tldr { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--color-neutral-700); margin-bottom: var(--space-6); }
+    .case-hero .metric-main { font-family: var(--font-metric); font-size: 64px; font-weight: 600; color: var(--color-brasa); line-height: 1.05; margin-bottom: var(--space-2); }
+    .case-hero .metric-baseline { font-size: 16px; color: var(--color-neutral-600); }
+    .case-hero-img { width: 100%; border-radius: var(--radius-lg); margin-top: var(--space-6); box-shadow: var(--shadow-card); }
+
+    /* Sections */
+    .case-section { padding: var(--space-8) 0; border-top: 1px solid var(--color-neutral-200); }
+    .case-section h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; color: var(--color-tinta); margin-bottom: var(--space-5); }
+    .case-section h3 { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--color-tinta); margin: var(--space-6) 0 var(--space-3); }
+    .case-section p { margin-bottom: var(--space-3); color: var(--color-neutral-900); }
+    .case-section ul { margin: var(--space-3) 0 var(--space-3) var(--space-5); }
+    .case-section li { margin-bottom: var(--space-2); }
+
+    /* Decision Cards */
+    .decisions-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-4); }
+    @media (min-width: 768px) { .decisions-grid { grid-template-columns: repeat(2, 1fr); } }
+    .decision-card { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: var(--radius-lg); padding: var(--space-4); }
+    .decision-card h4 { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--color-tinta); margin-bottom: var(--space-2); }
+    .decision-card .rationale { font-size: 15px; color: var(--color-neutral-700); margin-bottom: var(--space-2); }
+    .decision-card .tradeoff { font-size: 14px; color: var(--color-neutral-600); font-style: italic; }
+
+    /* Results */
+    .results-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-4); }
+    @media (min-width: 768px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
+    .result-card { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+    .result-card .metric { font-family: var(--font-metric); font-size: 48px; font-weight: 600; color: var(--color-brasa); line-height: 1.1; margin-bottom: var(--space-1); }
+    .result-card .label { font-size: 15px; color: var(--color-neutral-600); }
+
+    /* Reflection */
+    .reflection { background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-8); }
+    .reflection h3 { margin-top: 0; }
+    .reflection p { margin-bottom: var(--space-3); }
+
+    /* Back link */
+    .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-tinta); text-decoration: none; font-weight: 500; margin-bottom: var(--space-8); }
+    .back-link:hover { color: var(--color-brasa); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/work" class="active">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/resume">Résumé</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <a href="/work" class="back-link container">← Voltar para Work</a>
+
+    <header class="case-hero">
+      <div class="container">
+        <div class="case-meta">
+          <span>Product Designer</span>
+          <span>Reframing, Redesign, Baseline, Métricas</span>
+          <span>iGaming → traduz para fintech/health</span>
+        </div>
+        <h1>Jornada de Cadastro & FTD</h1>
+        <p class="tldr">O pedido era "ajustar formulário". O problema real: a lógica da jornada inteira. Redesign completo com baseline em vídeo → -54% no tempo total (10min → 4min38s).</p>
+        <div class="metric-main">-54%</div>
+        <div class="metric-baseline">Baseline: 10min → Resultado: 4min38s (cronometrado em vídeo antes/depois)</div>
+        <div class="case-hero-img" style="background: var(--color-neutral-100); min-height: 300px; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-400);">[Before/After flow screenshot or illustration: Antes/Depois em Espelho]</div>
+      </div>
+    </header>
+
+    <section class="case-section">
+      <div class="container">
+        <h2>O briefing vs. o problema real</h2>
+        <h3>O que pediram</h3>
+        <p>"Ajustar o formulário que está longo demais." — briefing operacional focado em quantidade de campos.</p>
+        <h3>O que estava quebrado de fato</h3>
+        <p>Mapeei o fluxo completo e cronometrei cada etapa. O problema não era quantidade de campos, mas a <strong>ordem e a lógica da jornada</strong>: etapas redundantes, informações fora de sequência, formulário monolítico que travava o usuário.</p>
+        <h3>O reframing que mudou a direção</h3>
+        <p><strong>Pergunta feita:</strong> "Onde o usuário realmente trava?" — não "quantos campos tem?".</p>
+        <p><strong>Decisão:</strong> Reconstruí o percurso inteiro: removi etapas redundantes, reorganizei a sequência de informações, transformei formulário monolítico em etapas com progressão clara.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <h2>Decisões-chave</h2>
+        <div class="decisions-grid">
+          <article class="decision-card">
+            <h4>Automação via CPF</h4>
+            <p class="rationale">Pré-preenchimento de dados cadastrais via API de CPF reduziu digitação manual em ~60%.</p>
+            <p class="tradeoff">Trade-off: dependência de API externa; mitigado com fallback manual.</p>
+          </article>
+          <article class="decision-card">
+            <h4>Micro-vitórias (Progressive Disclosure)</h4>
+            <p class="rationale">Divisão em etapas com feedback visual de progresso manteve motivação; cada passo = conquista visível.</p>
+            <p class="tradeoff">Trade-off: mais cliques totais, mas menor carga cognitiva por etapa.</p>
+          </article>
+          <article class="decision-card">
+            <h4>KYC Postergado</h4>
+            <p class="rationale">Validação de identidade movida para depois do primeiro depósito (FTD), não no cadastro.</p>
+            <p class="tradeoff">Trade-off: risco regulatório gerenciado com compliance; ganho massivo em conversão inicial.</p>
+          </article>
+          <article class="decision-card">
+            <h4>Baseline em Vídeo</h4>
+            <p class="rationale">Gravação do fluxo original (10min) antes de qualquer mudança — auditoria e reprodutibilidade.</p>
+            <p class="tradeoff">Trade-off: tempo extra upfront; elimina "achismo" e permite defesa da decisão com evidência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <h2>Resultados e impacto</h2>
+        <div class="results-grid">
+          <article class="result-card">
+            <div class="metric">-54%</div>
+            <div class="label">Tempo total do fluxo<br>(10min → 4min38s)</div>
+          </article>
+          <article class="result-card">
+            <div class="metric">Baseline</div>
+            <div class="label">Gravado em vídeo<br>antes de qualquer mudança</div>
+          </article>
+          <article class="result-card">
+            <div class="metric">Decisões</div>
+            <div class="label">Documentadas com<br>rationale + evidência</div>
+          </article>
+          <article class="result-card">
+            <div class="metric">Reprodutível</div>
+            <div class="label">Qualquer pessoa audita<br>o que mudou e por quê</div>
+          </article>
+        </div>
+        <p style="margin-top: var(--space-5); color: var(--color-neutral-600);">Para recrutador técnico de startup B2B SaaS: o dado relevante não é a redução em si — é o método. Baseline gravado, decisões documentadas com rationale, resultado final reproduzível. Não foi "design bonito que reduziu tempo" — foi decisão de produto mensurável, com evidência.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <h2>Reflexão</h2>
+        <div class="reflection">
+          <p>O que aprendi: briefing "ajustar formulário" quase sempre esconde problema de jornada. A métrica de tempo é proxy de atrito — mas só vale se medida antes e depois com o mesmo método.</p>
+          <p>O que faria diferente: testaria a etapa de KYC postergado com usuários reais antes do lançamento (fizemos só validação interna). Também adicionaria telemetria de drop-off por campo, não só por etapa.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
